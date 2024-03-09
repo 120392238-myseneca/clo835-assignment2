@@ -9,21 +9,18 @@ spec:
   selector:
     matchLabels:
       app: mysql
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
         app: mysql
     spec:
       containers:
-      - name: 
+      - name: cont-mysql 
         image: 711386944025.dkr.ecr.us-east-1.amazonaws.com/clo835-assign1-mysql-ecr:v0.1
-        args:
-          - --bind_ip
-          - 0.0.0.0
-        resources:
-          requests:
-            cpu: 100m
-            memory: 100Mi
         ports:
         - containerPort: 3306
+          protocol: TCP
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: pw
