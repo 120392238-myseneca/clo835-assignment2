@@ -15,6 +15,12 @@ spec:
       containers:
         - name: cont-mysql
           image: 711386944025.dkr.ecr.us-east-1.amazonaws.com/clo835-assign1-mysql-ecr:v0.1
+          ports:
+          - containerPort: 3306
+            protocol: TCP
+          env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: pw
   replicas: 1
   selector:
     matchLabels:
