@@ -7,8 +7,8 @@ metadata:
     app: employees
 spec:
   containers:
-  - image: 711386944025.dkr.ecr.us-east-1.amazonaws.com/clo835-assign1-webapp-ecr:latest
-    name: cont-webapp
-    ports:
-    - containerPort: 8080
-      protocol: TCP
+    - image: 711386944025.dkr.ecr.us-east-1.amazonaws.com/clo835-assign1-webapp-ecr::v0.1
+      name: cont-webapp
+      ports:
+      - containerPort: 8080
+        protocol: TCP

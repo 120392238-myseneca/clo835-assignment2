@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: cont-webapp
-        image: 711386944025.dkr.ecr.us-east-1.amazonaws.com/clo835-assign1-webapp-ecr:latest
+        image: 711386944025.dkr.ecr.us-east-1.amazonaws.com/clo835-assign1-webapp-ecr:v0.1
         resources:
           requests:
             cpu: 100m
