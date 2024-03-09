@@ -1,8 +1,8 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: replica-webapp
-  namespace: ns-webapp
+  name: replica-mysql
+  namespace: ns-mysql
   labels:
     app: mysql
 spec:
@@ -13,8 +13,8 @@ spec:
         app: mysql
     spec:
       containers:
-      - name: mysql-con
-        image: 711386944025.dkr.ecr.us-east-1.amazonaws.com/clo835-assign1-mysql-ecr:v0.1
+        - name: cont-mysql
+          image: 711386944025.dkr.ecr.us-east-1.amazonaws.com/clo835-assign1-mysql-ecr:v0.1
   replicas: 1
   selector:
     matchLabels:
