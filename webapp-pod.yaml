@@ -7,8 +7,20 @@ metadata:
     app: employees
 spec:
   containers:
-    - image: 711386944025.dkr.ecr.us-east-1.amazonaws.com/clo835-assign1-webapp-ecr::v0.1
+    - image: 711386944025.dkr.ecr.us-east-1.amazonaws.com/clo835-assign1-webapp-ecr:v0.1
       name: cont-webapp
       ports:
       - containerPort: 8080
         protocol: TCP
+      env:
+      - name: DBHOST
+        value: "10.244.0.12"
+      - name: DBPORT
+        value: "3306"
+      - name: DBUSER
+        value: "root"
+      - name: DATABASE
+        value: "employees"
+      - name: DBPWD
+        value: "pw"
+
