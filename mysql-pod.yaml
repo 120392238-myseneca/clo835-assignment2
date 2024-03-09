@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-mysql
+  namespace: ns-mysql
+  labels:
+    app: mysql
+spec:
+  containers:
+  - image: 711386944025.dkr.ecr.us-east-1.amazonaws.com/clo835-assign1-mysql-ecr:latest
+    name: cont-mysql
+    ports:
+    - containerPort: 3306
+      protocol: TCP

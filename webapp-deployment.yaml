@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: depl-webapp
+  namespace: ns-webapp
+  labels:
+    app: employees
+    
+spec:
+  selector:
+    matchLabels:
+      app: employees
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: employees
+    spec:
+      containers:
+      - name: cont-webapp
+        image: 711386944025.dkr.ecr.us-east-1.amazonaws.com/clo835-assign1-webapp-ecr:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        env:
+        - name: GET_HOSTS_FROM
+          value: dns
+        ports:
+        - containerPort: 8080
