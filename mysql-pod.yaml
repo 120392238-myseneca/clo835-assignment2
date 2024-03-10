@@ -7,7 +7,7 @@ metadata:
     app: mysql
 spec:
   containers:
-    - image: 711386944025.dkr.ecr.us-east-1.amazonaws.com/clo835-assign1-mysql-ecr::v0.1
+    - image: 711386944025.dkr.ecr.us-east-1.amazonaws.com/clo835-assign1-mysql-ecr:v0.1
       name: cont-mysql
       ports:
       - containerPort: 3306
